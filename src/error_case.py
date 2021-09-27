@@ -1,6 +1,6 @@
 from main import *
-from function_controller import *
 from os import terminal_size
+from controller import *
 import getopt, sys
 import pandas
 
@@ -28,16 +28,16 @@ def check_cities(origin_city, destination_city):
 
 def check_args(argv):
     argumentList = sys.argv[1:]
-    options = "h:"
+    options = "h"
     long_options = ["Help"]
 
     try:
         arguments, values = getopt.getopt(argumentList, options, long_options)
         for currentArgument, currentValue in arguments:
             if currentArgument in ("-h", "--Help"):
-                print("to use this data_crunching script:")
-                print("show help:\n ./main.py -h")
-                print("Usage:\n ./main.py [Origin_city] [Destination_city]")
+                print("How to use this data_crunching script:")
+                print("Show help:\n \t./main.py -h")
+                print("Usage:\n \t./main.py [Origin_city] [Destination_city]")
     except getopt.error as err:
         print(str(err))
     if len(sys.argv) != 3:
