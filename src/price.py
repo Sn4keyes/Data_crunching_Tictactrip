@@ -24,4 +24,4 @@ def price(origin_city, destination_city, data_ticket, data_cities):
     max /= 100
     moy /= 100
     print("\t💵 Prices : From", min, "To", max, "€")
-    print("\t\t      Average of", moy, "€")
+    print("\t\t    Average of", moy, "€")

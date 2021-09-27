@@ -2,6 +2,7 @@ from distance import *
 from price import *
 from duration import *
 from company import *
+from category import *
 from numpy import tile
 import pandas
 import pandas as pd
@@ -15,3 +16,4 @@ def manage(origin_city, destination_city, data_cities):
     price(origin_city, destination_city, data_ticket, data_cities)
     duration(data_ticket, data_cities, origin_city, destination_city)
     company(origin_city, destination_city, data_ticket, data_providers, data_cities)
+    # category(origin_city, destination_city, data_ticket, data_providers)

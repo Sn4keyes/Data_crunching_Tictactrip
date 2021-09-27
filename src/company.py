@@ -3,12 +3,13 @@ from distance import *
 import pandas as pd
 import re
 
-# def find_companies(companies_clean, data_providers):
-    # for i in range(len(companies_clean)):
-    #     for y in range(len(data_providers["id"])):
-    #         # print("Companies: ID ==", companies_clean[i], "Name ==", data_providers["name"][y], "IDV ==", int(data_providers["id"][y]))
-    #         if data_providers["id"][y] == companies_clean[0]:
-    #             print("Companies: ID ==", companies_clean[i], "Name ==", data_providers["name"][y], "IDV ==", data_providers["id"][y])
+def find_companies(companies_clean, data_providers):
+    # for y in range(len(data_providers["id"])):
+    #     data_companies.append(re.findall(r'\d+' , str(data_providers["id"][y])))
+        for i in range(len(companies_clean)):
+            for y in range(len(data_providers["id"])):
+                if companies_clean[i][0] == data_providers["id"][y]:
+                    print("Trouvé == ", type(companies_clean[i]), type(data_providers["name"][y]))
 
 
 def cleaning_companies(companies):
@@ -42,5 +43,5 @@ def company(origin_city, destination_city, data_ticket, data_providers, data_cit
             companies.append(re.findall(r'\d+' , str(data_ticket["other_companies"][i])))
     companies_sort = sorting_companies(companies)
     companies_clean = cleaning_companies(companies_sort)
-    # companies_find = find_companies(companies_clean, data_providers)
+    companies_find = find_companies(companies_clean, data_providers)
     print("\t📮 Company :", companies_clean)
